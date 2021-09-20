@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    font-size: 10px;
+}
+
+body {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 5%;
+}
+
+body .popup {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+    transition: width 2s ease-in-out;
+}
+
+body .popup .change {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    background-color: orangered;
+    cursor: pointer;
+}
+
+body .popup .change ion-icon {
+    font-size: 24px;
+    color: white;
+}
+
+body .popup.closed {
+    width: 0;
+}
+
+body .popup .popup_form {
+    width: 80%;
+    padding-top: 5;
+}
+
+body .popup .popup_form form {
+    width: 100%;
+}
+
+body .popup.closed .popup_form form {
+    display: none;
+}
+
+body .popup .popup_form form input {
+    width: 100%;
+    padding: 3%;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body .popup .popup_form form input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body .popup .popup_form form button {
+    padding: 3%;
+    background-color: orangered;
+    border-radius: 5px;
+    border: none;
+    margin: 5% auto;
+    display: block;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+body .container {
+    width: 80%;
+    padding-top: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/static/images/pexels-eberhard-grossgasteiger-2098427.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    box-shadow: 0px 0px 8px black;
+}
+
+body .container.day {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/static/images/pexels-bruno-scramgnon-585759.jpg');
+}
+
+body .container .weather_content .change {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: orangered;
+    cursor: pointer;
+}
+
+body .container .weather_content .change ion-icon {
+    font-size: 24px;
+}
+
+body .container .weather_content .city_name h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.555);
+}
+
+body .container .weather_content .weather_temp {
+    font-size: 5rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.555);
+}
+
+body .container .weather_content .weather_icon {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    margin: 1% auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .container.day .weather_content .weather_icon .sun {
+    width: 62px;
+    color: black;
+    ;
+}
+
+body .container .weather_content .weather_icon .sun {
+    width: 0;
+}
+
+body .container.day .weather_content .weather_icon .moon {
+    width: 0;
+}
+
+body .container .weather_content .weather_icon .moon {
+    width: 62px;
+    color: black;
+}
+
+@media screen and (min-width:760px) {
+    body {
+        padding-top: 0;
+    }
+    body .popup {
+        padding-top: 5%;
+    }
+    body .popup .popup_form {
+        width: 50%;
+    }
+    body .popup .popup_form form button {
+        padding: 3%;
+    }
+    body .popup .change {
+        width: 50px;
+        height: 50px;
+        top: 5%;
+        right: 5%;
+    }
+    body .container {
+        width: 30%;
+        height: 90%;
+        padding-top: 10%;
+        border-radius: 10px;
+    }
+}

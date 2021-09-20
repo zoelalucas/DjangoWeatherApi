@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="popup closed">
+        <div class="popup_form">
+            <div class="change">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="location" id="id_location" placeholder="Please enter your city">
+                <button type="submit">Get weather details</button>
+            </form>
+        </div>
+    </div>
+    <div class="container {% if is_Day %}day{% endif %}">
+        <div class="weather_content">
+            <div class="change">
+                <ion-icon name="cog-outline"></ion-icon>
+            </div>
+            <div class="city_name">
+                <h2>
+                    {% if city_name %}
+                        {{city_name}}
+                    {% else %}
+                        City Name
+                    {% endif %}
+                    
+                </h2>
+            </div>
+            <div class="weather_icon">
+
+                <ion-icon name="sunny-outline" size="large" class="sun"></ion-icon>
+                <ion-icon name="moon-outline" size="large" class="moon"></ion-icon>
+
+            </div>
+            <div class="weather_temp">
+                <h1>
+                    {% if temperature %}
+                    {{temperature}}
+                    {% else %}
+                        16
+                    {% endif %}
+                     &deg;C
+                </h1>
+            </div>
+        </div>
+
+    </div>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>
