@@ -21,8 +21,8 @@
             </div>
             <form action="" method="POST">
                 {% csrf_token %}
-                <input type="text" name="location" id="id_location" placeholder="Please enter your city">
-                <button type="submit">Get weather details</button>
+                <input type="text" name="location" id="id_location" placeholder="Ingresa tu ciudad">
+                <button type="submit">Ver Detalles</button>
             </form>
         </div>
     </div>
@@ -36,7 +36,7 @@
                     {% if city_name %}
                         {{city_name}}
                     {% else %}
-                        City Name
+                        Ciudad
                     {% endif %}
                     
                 </h2>
@@ -52,7 +52,7 @@
                     {% if temperature %}
                     {{temperature}}
                     {% else %}
-                        16
+                        Temp
                     {% endif %}
                      &deg;C
                 </h1>
