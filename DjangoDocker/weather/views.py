@@ -24,7 +24,7 @@ def home(request):
     if form.is_valid():
         city=form.cleaned_data['location']
 
-        api_key=('ovMGsSWLGwvVJo9xVJf9G2NDwxp5eK1B')
+        api_key=('API_KEY')
         
         city_data=getCityDet(api_key,city)
 
